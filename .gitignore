@@ -6,3 +6,6 @@ dist/
 node_modules/
 .DS_Store
 Thumbs.db
+
+# ผูกกับโปรเจกต์ Apps Script ของโรงเรียน (clasp)
+.clasp.json

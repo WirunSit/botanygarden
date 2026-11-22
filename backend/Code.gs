@@ -125,6 +125,7 @@ function doGet(e) {
     try { data = p.data ? JSON.parse(p.data) : {}; } catch (err) { data = {}; }
     return jsonOut(handleRequest({ action: p.action, token: p.token, data: data }));
   }
+  ensureSchema(); // ติดตั้งครั้งแรก: สร้างชีตให้อัตโนมัติแม้ยังไม่ได้รัน setup()
   return HtmlService.createHtmlOutputFromFile('Index')
     .setTitle(getSettings().system_name || 'พฤกษาพุทธมงคล')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1, viewport-fit=cover')
