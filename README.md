@@ -71,6 +71,13 @@ node tools/build.js
 - **นำเข้ารายชื่อ**: คัดลอกจาก Excel วางได้เลย (เลขประจำตัว, ชื่อ-สกุล, ห้อง, เลขที่, กลุ่ม, ...)
 - ถ้ามีทะเบียนพรรณไม้เดิม: ครูกรอกรหัสเดิมได้ในขั้น "วัดขนาด" (ช่องรหัสประจำต้น) และในหน้าแก้ไขชนิด (รหัสชนิด) ระบบจะออกรหัสใหม่ต่อจากเลขสูงสุด ไม่ทับของเดิม
 
+### GitHub Pages (ตั้งไว้แล้ว — https://wirunsit.github.io/botanygarden/)
+ทุกครั้งที่ push เข้า `main` ระบบ GitHub Actions ([.github/workflows/pages.yml](.github/workflows/pages.yml)) จะสร้างและเผยแพร่หน้าเว็บให้อัตโนมัติ
+- **ตอนนี้เป็นโหมดทดลอง** (ข้อมูลตัวอย่าง เก็บในเบราว์เซอร์ของผู้เปิดแต่ละคน) ใช้สาธิต/ฝึกนักเรียนได้ทันที
+- **เชื่อมข้อมูลจริง**: หลัง deploy Apps Script แล้ว ไปที่ repo → Settings → Secrets and variables → Actions → แท็บ Variables →
+  New repository variable ชื่อ `APPS_SCRIPT_URL` ค่า URL ที่ลงท้าย `/exec` → ไปที่แท็บ Actions → *Deploy GitHub Pages* → Run workflow
+- แล้วตั้ง "ลิงก์หน้าเว็บสำหรับ QR Code" ในระบบเป็น `https://wirunsit.github.io/botanygarden/`
+
 ### ทางเลือก B (แนะนำเมื่อใช้จริง) — ฝากหน้าเว็บบน GitHub Pages
 หน้าเว็บที่รันใน Apps Script อยู่ใน iframe ของ Google ซึ่ง**อาจใช้ GPS ไม่ได้**ในบางเครื่อง (ยังปักหมุดเองบนแผนที่ได้)
 ถ้าต้องการ GPS เต็มที่และ URL สั้น:
