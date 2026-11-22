@@ -73,6 +73,9 @@
       el.innerHTML = '<div style="padding:16px"><div class="alert warn"><span class="ic">🧊</span><div>อุปกรณ์/เบราว์เซอร์นี้ไม่รองรับแผนที่ 3 มิติ (WebGL)</div></div><a class="btn primary" href="#/map">ไปที่แผนที่ 2 มิติ</a></div>';
       return;
     }
+    // มี Google Maps API Key → ใช้ภาพ 3 มิติสมจริงของ Google (google3d.js) เว้นแต่เลือกแบบจำลองเอง
+    var gkey = App.boot.settings.google_maps_api_key;
+    if (gkey && q.engine !== 'model' && !App.gmAuthFailed && App.google3d) return App.google3d(p, q, el);
     if (!q.force && navigator.deviceMemory && navigator.deviceMemory < 3) {
       el.innerHTML = '<div style="padding:16px"><div class="alert info"><span class="ic">📱</span><div>อุปกรณ์นี้หน่วยความจำน้อย แผนที่ 3 มิติอาจช้า แนะนำแผนที่ 2 มิติ</div></div>' +
         '<div class="btn-row"><a class="btn primary" href="#/map">ใช้แผนที่ 2 มิติ</a><a class="btn" href="#/map3d?force=1">ลองแบบ 3 มิติ</a></div></div>';
@@ -89,6 +92,8 @@
       (App.boot.routes || []).map(function (r) { return '<option value="' + esc(r.route_id) + '">' + esc(r.name) + '</option>'; }).join('') + '</select></label>' +
       '<div class="btn-row"><button class="btn sm primary" id="m3tour">👣 ทัวร์อัตโนมัติ</button><button class="btn sm" id="m3walk">🚶 เดินชม</button></div>' +
       '<div class="btn-row"><button class="btn sm" id="m3reset">🧭 มุมมองเริ่มต้น</button><a class="btn sm" href="#/map">🗺️ 2 มิติ</a></div>' +
+      (gkey ? '<a class="small" href="#/map3d">🌏 ใช้ภาพ 3 มิติสมจริงของ Google</a>'
+        : App.level() >= 4 ? '<span class="small muted">💡 ตั้ง Google Maps API Key ที่ <a href="#/admin/settings">ตั้งค่า</a> เพื่อใช้ภาพ 3 มิติสมจริงของ Google</span>' : '') +
       '</div></div><div id="m3legend" class="map-legend"></div><div id="m3caption" class="m3-caption hidden"></div><div id="m3walkpad" class="m3-walk hidden"></div>' +
       '<div id="m3loading" class="empty" style="position:absolute;inset:0;z-index:600;background:rgba(255,255,255,.7)"><div class="spinner"></div>กำลังโหลดแผนที่ 3 มิติ…</div></div>';
 

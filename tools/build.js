@@ -25,7 +25,7 @@ const DEMO_FILES = ['dev/sha256.js', 'dev/mock-platform.js'].concat(
   ['Utils', 'Auth', 'Plants', 'Photos', 'AI', 'Review', 'Admin', 'Reports', 'Field', 'Content', 'Setup', 'Code'].map(f => 'backend/' + f + '.gs'));
 
 const JS_FILES = ['api.js', 'ui.js', 'icons.js', 'forms.js', 'maps.js', 'offline.js', 'app.js', 'wizard.js', 'species.js', 'review.js', 'admin.js',
-  'field.js', 'map3d.js', 'learn.js'];
+  'field.js', 'map3d.js', 'google3d.js', 'learn.js'];
 
 function read(p) { return fs.readFileSync(p, 'utf8'); }
 

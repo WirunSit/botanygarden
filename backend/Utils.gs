@@ -70,7 +70,7 @@ var SCHEMA = {
 };
 
 /** เพิ่มเลขนี้เมื่อเพิ่มชีต/คอลัมน์ — ระบบจะสร้างส่วนที่ขาดให้อัตโนมัติในคำขอแรก */
-var SCHEMA_VERSION = '2';
+var SCHEMA_VERSION = '3';
 
 /** สถานะระเบียนต้นไม้ */
 var STATUS = {
@@ -181,6 +181,7 @@ var DEFAULT_SETTINGS = [
   ['points_verified', '20', 'คะแนนเมื่อได้รับอนุมัติ'],
   ['points_photo', '5', 'คะแนนเมื่อเพิ่มรูปให้ต้นที่อนุมัติแล้ว'],
   ['points_phenology', '3', 'คะแนนเมื่อบันทึกชีพลักษณ์ (แตกใบ/ออกดอก/ติดผล)'],
+  ['google_maps_api_key', '', 'Google Maps API Key สำหรับแผนที่ 3 มิติแบบสมจริง (เปิด Maps JavaScript API + บัญชีเรียกเก็บเงิน และจำกัด HTTP referrer เป็นโดเมนของหน้าเว็บ) — เว้นว่าง = ใช้แผนที่ 3 มิติแบบจำลอง'],
   ['imagery_url', '', 'ภาพถ่ายทางอากาศของโรงเรียนเอง เช่น จากโดรน (รูปแบบ https://.../{z}/{x}/{y}.png) — เว้นว่าง = ภาพดาวเทียม Esri'],
   ['wood_density_default', '0.6', 'ความหนาแน่นเนื้อไม้เริ่มต้น (ก./ลบ.ซม.) ใช้คำนวณคาร์บอนเมื่อชนิดนั้นไม่ได้ระบุ'],
   ['carbon_fraction', '0.47', 'สัดส่วนคาร์บอนในมวลชีวภาพแห้ง (IPCC 2006)'],
@@ -192,7 +193,7 @@ var DEFAULT_SETTINGS = [
 var PUBLIC_SETTING_KEYS = ['school_name', 'system_name', 'academic_year', 'map_center', 'map_zoom',
   'school_boundary', 'duplicate_radius_m', 'gps_good_m', 'gps_ok_m', 'gps_seconds', 'required_photo_parts',
   'ai_enabled', 'leader_review_enabled', 'public_show_student_name', 'public_url', 'photo_max_px',
-  'photo_quality', 'postal_code', 'plantnet_enabled', 'imagery_url', 'wood_density_default',
+  'photo_quality', 'postal_code', 'plantnet_enabled', 'imagery_url', 'google_maps_api_key', 'wood_density_default',
   'carbon_fraction', 'root_shoot_ratio'];
 
 function getSettings() {
