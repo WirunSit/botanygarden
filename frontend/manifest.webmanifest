@@ -1,0 +1,14 @@
+{
+  "name": "พฤกษาพุทธมงคล — ระบบจัดการพรรณไม้",
+  "short_name": "พฤกษาพุทธมงคล",
+  "description": "ทะเบียนพรรณไม้ดิจิทัล งานสวนพฤกษศาสตร์โรงเรียน",
+  "lang": "th",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f4",
+  "theme_color": "#1f5138",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

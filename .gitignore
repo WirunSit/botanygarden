@@ -1,0 +1,8 @@
+# ไฟล์ที่สร้างจาก tools/build.js (สร้างใหม่ได้เสมอ)
+dist/
+
+# การตั้งค่าเครื่องมือในเครื่อง
+.claude/
+node_modules/
+.DS_Store
+Thumbs.db
