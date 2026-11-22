@@ -71,6 +71,14 @@ node tools/build.js
 - **นำเข้ารายชื่อ**: คัดลอกจาก Excel วางได้เลย (เลขประจำตัว, ชื่อ-สกุล, ห้อง, เลขที่, กลุ่ม, ...)
 - ถ้ามีทะเบียนพรรณไม้เดิม: ครูกรอกรหัสเดิมได้ในขั้น "วัดขนาด" (ช่องรหัสประจำต้น) และในหน้าแก้ไขชนิด (รหัสชนิด) ระบบจะออกรหัสใหม่ต่อจากเลขสูงสุด ไม่ทับของเดิม
 
+### อัปเดตโค้ดหลังบ้านด้วย clasp (ติดตั้งไว้แล้วในเครื่องนี้)
+```bash
+node tools/build.js
+clasp push --force
+clasp update-deployment AKfycby2siZ9XAImETurbx8ReykO2h8DC36jcz__Dwb1-f-zF9SUT_Lr8qNKKENEXyg5ZW4
+```
+(`update-deployment` ใช้รหัสเดิม URL ของ Web App จึงไม่เปลี่ยน — ไฟล์ `.clasp.json` ผูกกับโปรเจกต์ของโรงเรียน ไม่ได้อยู่ใน Git)
+
 ### GitHub Pages (ตั้งไว้แล้ว — https://wirunsit.github.io/botanygarden/)
 ทุกครั้งที่ push เข้า `main` ระบบ GitHub Actions ([.github/workflows/pages.yml](.github/workflows/pages.yml)) จะสร้างและเผยแพร่หน้าเว็บให้อัตโนมัติ
 - **ตอนนี้เป็นโหมดทดลอง** (ข้อมูลตัวอย่าง เก็บในเบราว์เซอร์ของผู้เปิดแต่ละคน) ใช้สาธิต/ฝึกนักเรียนได้ทันที
